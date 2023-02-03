@@ -1,0 +1,6 @@
+pyfiglet
+pyserial
+colorama
+keyboard
+datetime
+requests
