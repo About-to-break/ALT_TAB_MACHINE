@@ -31,10 +31,13 @@ class Telesend:
     def __takeQuip(self):
         return random.choice(self.__QUIPS)
 
-    def sendMessage(self):
+    def __sendMessage(self):
         message = self.__takeQuip()
         url = f"https://api.telegram.org/bot{self.__TOKEN}/sendMessage?chat_id={self.__CHAT_ID}&text={message}"
         requests.get(url).json()  # this sends the message
+
+    def action(self):
+        self.__sendMessage()
     __flag = True
     __TOKEN = ""
     __CHAT_ID = ""
